@@ -2,6 +2,7 @@ import { Menu, Input, Button, Row, Col, Card, Avatar } from 'antd'
 import Link from 'next/link'
 import PropTypes from 'prop-types'
 import LoginForm from './LoginForm'
+import UserProfile from './UserProfile'
 
 const dummy = {
   nickname: 'kidow',
@@ -27,34 +28,7 @@ const Layout = ({ children }) => {
       </Menu>
       <Row gutter={10}>
         <Col xs={12} md={6}>
-          {dummy.isLoggedIn ? (
-            <Card
-              actions={[
-                <div key="twit">
-                  짹쨱
-                  <br />
-                  {dummy.post.length}
-                </div>,
-                <div key="twit">
-                  팔로잉
-                  <br />
-                  {dummy.followings.length}
-                </div>,
-                <div key="twit">
-                  팔로워
-                  <br />
-                  {dummy.followers.length}
-                </div>
-              ]}
-            >
-              <Card.Meta
-                avatar={<Avatar>{dummy.nickname[0]}</Avatar>}
-                title={dummy.nickname}
-              />
-            </Card>
-          ) : (
-            <LoginForm />
-          )}
+          {dummy.isLoggedIn ? <UserProfile /> : <LoginForm />}
         </Col>
         <Col xs={12} md={12}>
           {children}
