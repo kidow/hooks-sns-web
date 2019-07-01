@@ -13,7 +13,7 @@ export default () => {
         <script src="https://cdnjs.cloudflare.com/ajax/libs/antd/3.16.2/antd.js" />
       </Head>
       <Layout>
-        <div>Hello, Next!</div>
+        <div>Hello, signup!</div>
       </Layout>
     </>
   )
