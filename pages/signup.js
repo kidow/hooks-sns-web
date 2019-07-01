@@ -1,12 +1,8 @@
 import { useState, useCallback } from 'react'
 import { Form, Input, Checkbox, Button } from 'antd'
+import { useInput } from '../lib/hooks'
 
 export default () => {
-  const useInput = (initialState = '') => {
-    const [value, setValue] = useState(initialState)
-    return [value, useCallback(e => setValue(e.target.value), [])]
-  }
-
   const [id, onChangeId] = useInput('')
   const [nick, onChangeNick] = useInput('')
   const [password, onChangePassword] = useInput('')

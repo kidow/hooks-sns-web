@@ -1,7 +1,8 @@
 import Head from 'next/head'
 import Layout from '../components/Layout'
+import PropTypes from 'prop-types'
 
-export default ({ Component }) => {
+const Kidobird = ({ Component }) => {
   return (
     <>
       <Head>
@@ -18,3 +19,9 @@ export default ({ Component }) => {
     </>
   )
 }
+
+Kidobird.propTypes = {
+  Component: PropTypes.elementType
+}
+
+export default Kidobird
